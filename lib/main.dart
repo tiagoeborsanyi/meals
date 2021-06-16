@@ -32,6 +32,14 @@ class MyApp extends StatelessWidget {
         AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
         AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
       },
+      onUnknownRoute: (settings) {
+        // caso a rota não existir vai cair dentro dessa função
+        return MaterialPageRoute(
+          builder: (_) {
+            return CategoriesScreen();
+          },
+        );
+      },
     );
   }
 }
